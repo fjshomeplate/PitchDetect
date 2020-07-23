@@ -114,7 +114,7 @@ function gotStream(stream) {
 
     // Connect it to the destination.
     analyser = audioContext.createAnalyser();
-    analyser.fftSize = 2048;
+    analyser.fftSize = 1024;
     mediaStreamSource.connect( analyser );
     updatePitch();
 }
@@ -134,7 +134,7 @@ function toggleOscillator() {
     sourceNode = audioContext.createOscillator();
 
     analyser = audioContext.createAnalyser();
-    analyser.fftSize = 2048;
+    analyser.fftSize = 1024;
     sourceNode.connect( analyser );
     analyser.connect( audioContext.destination );
     sourceNode.start(0);
@@ -142,7 +142,7 @@ function toggleOscillator() {
     isLiveInput = false;
     updatePitch();
 
-    return "stop";
+    return "stop";2
 }
 
 function toggleLiveInput() {
